@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="6" build="0" />
+    <region id="MetaData">
+        <node id="root">
+            <attribute id="Module" value="2dd377b0-11f2-4610-9d3f-151508836589" type="23" />
+            <attribute id="Name" value="JLMBYpp_OdinBladeExtension" type="23" />
+            <attribute id="Type" value="Add-on" type="23" />
+            <attribute id="UUID" value="29e224b7-e12d-4215-8773-b78c8dd55f46" type="23" />
+        </node>
+    </region>
+</save>

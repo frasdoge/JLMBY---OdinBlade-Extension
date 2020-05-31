@@ -1,0 +1,131 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+
+// Need extra checks to see which modules are installed, has to go in KB section
+// Otherwise skills can be added as they are present in OdinCore without module
+
+// Aerothurge
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinAERO_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("AirSpecialist", "Shout_OdinAERO_Thunderbrand");
+DB_JLMBYpp_StarterSkills("AirSpecialist", "Cone_OdinAERO_TurbulantWind");
+DB_JLMBYpp_StarterSkills("AirSpecialist", "Target_OdinAERO_Overcast");
+DB_JLMBYpp_StarterSkills("AirSpecialist", "Target_OdinAERO_Conduit");
+DB_JLMBYpp_HasReceivedToItem("AirSpecialist", "JLMBYpp_OdinbladeAero");
+
+// Hydrosophist
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinHYDRO_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("WaterSpecialist", "Projectile_OdinWater_Bubblebeam");
+DB_JLMBYpp_StarterSkills("WaterSpecialist", "Shout_OdinWater_Frostblade");
+DB_JLMBYpp_StarterSkills("WaterSpecialist", "Target_OdinWater_FreezingTouch");
+DB_JLMBYpp_HasReceivedToItem("FireSpecialist", "JLMBYpp_OdinbladePyro");
+
+// Pyrokinetic
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinPYRO_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("FireSpecialist", "Target_OdinPyro_BurningTouch");
+DB_JLMBYpp_StarterSkills("FireSpecialist", "Rain_OdinPyro_EmberShower");
+DB_JLMBYpp_StarterSkills("FireSpecialist", "Shout_FireBrand");
+DB_JLMBYpp_HasReceivedToItem("FireSpecialist", "JLMBYpp_OdinbladePyro");
+
+// Geomancy
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinGEO_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("EarthSpecialist", "Shout_OdinGEO_Earthbrand");
+DB_JLMBYpp_StarterSkills("EarthSpecialist", "Shout_VenomCoating");
+DB_JLMBYpp_StarterSkills("EarthSpecialist", "Target_OdinGEO_NoxiousTouch");
+DB_JLMBYpp_StarterSkills("EarthSpecialist", "Target_OdinGEO_OilyTouch");
+DB_JLMBYpp_StarterSkills("EarthSpecialist", "Dome_OdinGEO_SporeShrooms");
+DB_JLMBYpp_HasReceivedToItem("EarthSpecialist", "JLMBYpp_OdinbladeGeo");
+
+// Necromancy
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinNECRO_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("Necromancy", "Projectile_OdinNECRO_BloodBarrage");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinNECRO_Mute");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinNECRO_OathOfDesecration");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinNECRO_UnearthCorpse");
+NOT DB_JLMBYpp_HasReceivedToItem("Necromancy", "JLMBYpp_Necro"); // Replace random element wands and staves with physical versions added by necro overhaul
+DB_JLMBYpp_HasReceivedToItem("Necromancy", "JLMBYpp_OdinbladeNecro");
+
+// Huntsman
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinHUN_OdinCORE_Calls")
+THEN
+DB_JLMBYpp_StarterSkills("RangerLore", "Target_OdinHUN_Summon_AnimalCompanion");
+DB_JLMBYpp_StarterSkills("RangerLore", "Projectile_OdinHUN_HuntersTrap");
+
+// Spectre
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinSPECTRE_DiscrepencyWarnings")
+THEN
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinSpectre_InflictAgony");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinSpectre_Purge");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinSpectre_Languish");
+DB_JLMBYpp_StarterSkills("Necromancy", "Shout_OdinSpectre_UnholyRitual");
+DB_JLMBYpp_StarterSkills("Necromancy", "Rain_OdinSpectre_Dreadfall");
+DB_JLMBYpp_StarterSkills("Necromancy", "Target_OdinSpectre_RaiseSpectralBanshee");
+DB_JLMBYpp_StarterSkills("Necromancy", "Projectile_OdinSpectre_EssenceBolt");
+DB_JLMBYpp_HasReceivedToItem("Necromancy", "JLMBYpp_OdinbladeSpectre");
+
+// Umbra
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+AND
+SysIsActive("OdinUMBRA_DiscrepencyWarnings")
+THEN
+DB_JLMBYpp_StarterSkills("RogueLore", "Shout_SHADEShadowstep");
+DB_JLMBYpp_StarterSkills("RogueLore", "Projectile_SHADEKnifeTest_Human");
+DB_JLMBYpp_StarterSkills("RogueLore", "Shout_SHADEBladeFlurry");
+DB_JLMBYpp_StarterSkills("RogueLore", "Jump_SHADEVeiledAssault");
+
+IF
+GameStarted(_Region, _)
+AND
+IsGameLevel(_Region, 1)
+THEN
+GoalCompleted;
+
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "__Start"
